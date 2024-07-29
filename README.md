@@ -348,21 +348,21 @@
 
 ### 3. 한글 Encoding을 다음과 같은 순서로 설정합니다.
 
-- Window -> Preferences -> 검색 창에 spelling 입력 -> Encoding -> Default(UTF-8) 체크 -> Apply
+  - Window -> Preferences -> 검색 창에 spelling 입력 -> Encoding -> Default(UTF-8) 체크 -> Apply
 
-- Window -> Preferences -> 검색 창에 Workspace 입력 -> Text file encoding -> Other: UTF-8 체크 -> Apply
+  - Window -> Preferences -> 검색 창에 Workspace 입력 -> Text file encoding -> Other: UTF-8 체크 -> Apply
 
-- Window -> Preferences -> General -> Content Types -> Java Class File, Text -> Default encoding: UTF-8 입력 -> Update -> Apply and Close
+  - Window -> Preferences -> General -> Content Types -> Java Class File, Text -> Default encoding: UTF-8 입력 -> Update -> Apply and Close
 
-- Window -> Preferences -> Editors -> Text Editors -> Spelling -> Encoding -> Other: UTF-8 체크 -> Apply
+  - Window -> Preferences -> Editors -> Text Editors -> Spelling -> Encoding -> Other: UTF-8 체크 -> Apply
 
-- 프로젝트 우클릭 -> Properties -> Resource -> Text file encoding -> Ohter: UTF-8 체크 -> Apply
+  - 프로젝트 우클릭 -> Properties -> Resource -> Text file encoding -> Ohter: UTF-8 체크 -> Apply
 
 ### 4. Apache Tomcat을 설치합니다.
 
 ### 5. so-so-market 프로젝트의 Dynamic Web Module과 Tomcat의 버전을 호환되도록 맞춥니다.
-
-[Dynamic Web Module과 Tomcat 버전 호환하는 방법](https://dark-cloud-covered-sunshine.tistory.com/27)
+  
+  - [Dynamic Web Module과 Tomcat 버전 호환하는 방법](https://dark-cloud-covered-sunshine.tistory.com/27)
 
 ### 6. so-so-market 프로젝트를 Tomcat에 적재합니다.
 
