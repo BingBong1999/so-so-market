@@ -1,6 +1,7 @@
 package com.example.jpetstore.service;
 
 import java.util.List;
+
 import com.example.jpetstore.domain.Account;
 import com.example.jpetstore.domain.Auction;
 import com.example.jpetstore.domain.Bidding;
@@ -11,7 +12,6 @@ import com.example.jpetstore.domain.Wish;
 
 public interface SosoMarketFacade {
 
-	/* Account */
 	Account getAccount(String accountId);
 
 	Account getAccount(String accountId, String password);
@@ -21,17 +21,13 @@ public interface SosoMarketFacade {
 	void updateAccount(Account account);
 
 	void deleteAccount(String accountId);
-	
-	void updateWithdraw(String accountId);
-	
 
+	void updateWithdraw(String accountId);
 
 	List<Category> getCategoryList();
 
 	Category getCategory(int categoryId);
-	
 
-	/* Product */
 	List<Product> getProductListByUser(String accountId);
 
 	List<Product> getProductListByCategory(int categoryId);
@@ -39,7 +35,7 @@ public interface SosoMarketFacade {
 	List<Product> searchProductList(String keyword);
 
 	Product getProduct(int productId);
-	
+
 	List<Product> getProductByUserAndTitle(String accountId, String title);
 
 	List<Product> getAllProduct();
@@ -51,9 +47,7 @@ public interface SosoMarketFacade {
 	void deleteProduct(int productId);
 
 	void updateProductStatus(Product product);
-	
-	/* auction */
-	
+
 	List<Auction> getAuctionListByUser(String accountId);
 
 	List<Auction> getAuctionListByCategory(int categoryId);
@@ -67,52 +61,42 @@ public interface SosoMarketFacade {
 	void insertAuction(Auction auction);
 
 	void deleteAuction(int auctionId);
-	
+
 	void updateAuctionCurrentPriceAndBuyerId(Bidding bidding);
-
-
-	/* Bidding */
 
 	void insertBidding(Bidding bidding);
 
 	Bidding getBidding(int biddingId);
-	
+
 	void deleteBidding(int auctionId);
 
 	List<Bidding> getBiddingsByUser(String accountId);
 
 	List<Bidding> getBiddingsByAuction(int auctionId);
 
-
-	/* order */
-	
 	void insertOrder(Order order);
-	
+
 	Order getOrder(int orderId);
 
 	Order getOrderByBuyer(int orderId);
-	
+
 	Order getOrderBySeller(int orderId);
 
-	
 	List<Order> getOrderListByBuyer(String accountId);
 
 	List<Order> getOrderListBySeller(String accountId);
 
 	void updateOrderStatus(Order order);
-	
-	
-	/* Wish */
 
 	Wish getWish(int productId);
-	
+
 	Wish getWish(String accountId, int productId);
 
-    List<Wish> getWishListByUser(String accountId);
-    
-    List<Wish> getWishListAuctionByUser(String accountId);
-    
-    void insertWish(Wish wish);
+	List<Wish> getWishListByUser(String accountId);
 
-    void deleteWish(int productId);
+	List<Wish> getWishListAuctionByUser(String accountId);
+
+	void insertWish(Wish wish);
+
+	void deleteWish(int productId);
 }

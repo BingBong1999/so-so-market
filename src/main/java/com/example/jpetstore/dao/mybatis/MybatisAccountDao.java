@@ -13,7 +13,7 @@ public class MybatisAccountDao implements AccountDao {
 
 	@Autowired
 	private AccountMapper accountMapper;
-	
+
 	public Account getAccount(String accountId) throws DataAccessException {
 		return accountMapper.getAccount(accountId);
 	}
@@ -29,11 +29,11 @@ public class MybatisAccountDao implements AccountDao {
 	public void updateAccount(Account account) throws DataAccessException {
 		accountMapper.updateAccount(account);
 	}
-	
+
 	public void deleteAccount(String accountId) throws DataAccessException {
 		accountMapper.deleteAccount(accountId);
 	}
-	
+
 	public void updateWithdraw(String accountId) throws DataAccessException {
 		accountMapper.updateWithdraw(accountId);
 	}

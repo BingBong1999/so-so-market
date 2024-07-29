@@ -1,11 +1,13 @@
 package com.example.jpetstore.dao;
 
 import java.util.List;
+
 import org.springframework.dao.DataAccessException;
+
 import com.example.jpetstore.domain.Product;
 
 public interface ProductDao {
-	
+
 	List<Product> getProductListByCategory(int categoryId) throws DataAccessException;
 
 	List<Product> getProductListByUser(String accountId) throws DataAccessException;
@@ -15,7 +17,7 @@ public interface ProductDao {
 	List<Product> getAllProductList() throws DataAccessException;
 
 	Product getProduct(int productId) throws DataAccessException;
-	
+
 	List<Product> getProductByUserAndTitle(String accountId, String title) throws DataAccessException;
 
 	void updateProduct(Product product) throws DataAccessException;
@@ -25,5 +27,5 @@ public interface ProductDao {
 	void deleteProduct(int productId) throws DataAccessException;
 
 	void updateProductStatus(Product product) throws DataAccessException;
-	
+
 }

@@ -1,9 +1,11 @@
 package com.example.jpetstore.service;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.example.jpetstore.dao.AccountDao;
 import com.example.jpetstore.dao.AuctionDao;
 import com.example.jpetstore.dao.BiddingDao;
@@ -21,7 +23,8 @@ import com.example.jpetstore.domain.Wish;
 
 @Service
 @Transactional
-public class SosoMarketImpl implements SosoMarketFacade { 
+public class SosoMarketImpl implements SosoMarketFacade {
+
 	@Autowired
 	private AccountDao accountDao;
 	@Autowired
@@ -60,7 +63,6 @@ public class SosoMarketImpl implements SosoMarketFacade {
 	public void updateWithdraw(String accountId) {
 		accountDao.updateWithdraw(accountId);
 	}
-	
 
 	public Category getCategory(int categoryId) {
 		return categoryDao.getCategory(categoryId);
@@ -69,8 +71,6 @@ public class SosoMarketImpl implements SosoMarketFacade {
 	public List<Category> getCategoryList() {
 		return categoryDao.getCategoryList();
 	}
-
-	/* Product */
 
 	public List<Product> getProductListByCategory(int categoryId) {
 		return productDao.getProductListByCategory(categoryId);
@@ -91,7 +91,7 @@ public class SosoMarketImpl implements SosoMarketFacade {
 	public List<Product> getProductByUserAndTitle(String accountId, String title) {
 		return productDao.getProductByUserAndTitle(accountId, title);
 	}
-	
+
 	public List<Product> getAllProduct() {
 		return productDao.getAllProductList();
 	}
@@ -101,7 +101,7 @@ public class SosoMarketImpl implements SosoMarketFacade {
 	}
 
 	public void insertProduct(Product product) {
-		System.out.println(product.toString()+ "insertdao 직전");
+		System.out.println(product.toString() + "insertdao 직전");
 		productDao.insertProduct(product);
 	}
 
@@ -112,8 +112,6 @@ public class SosoMarketImpl implements SosoMarketFacade {
 	public void updateProductStatus(Product product) {
 		productDao.updateProductStatus(product);
 	}
-
-	/* auction */
 
 	public List<Auction> getAuctionListByUser(String accountId) {
 		return auctionDao.getAuctionListByUser(accountId);
@@ -126,7 +124,7 @@ public class SosoMarketImpl implements SosoMarketFacade {
 	public List<Auction> searchAuctionList(String keyword) {
 		return auctionDao.searchAuctionList(keyword);
 	}
-	
+
 	public List<Auction> getAllAuction() {
 		return auctionDao.getAllAuctionList();
 	}
@@ -134,36 +132,21 @@ public class SosoMarketImpl implements SosoMarketFacade {
 	public Auction getAuction(int auctionId) {
 		return auctionDao.getAuction(auctionId);
 	}
-	
-//	@Override
-//	public void updateAuction(int auctionId) {
-//		
-//	}
-	
+
 	public void insertAuction(Auction auction) {
-		auctionDao.insertAuction(auction);	
+		auctionDao.insertAuction(auction);
 	}
 
 	public void deleteAuction(int auctionId) {
 		auctionDao.deleteAuction(auctionId);
 	}
-	
+
 	public void updateAuctionCurrentPriceAndBuyerId(Bidding bidding) {
 		auctionDao.updateAuctionCurrentPriceAndBuyerId(bidding);
 	}
 
-//	public void updateAuctionStatus(Auction auction) {
-//		auctionDao.updateAuctionStatus(auction);
-//	}
-
-	/* Bidding */
-
 	public void insertBidding(Bidding bidding) {
 		biddingDao.insertBidding(bidding);
-//		Auction auction = new Auction();
-//		auction.setCurrentPrice(bidding.getBiddingPrice());
-//		auction.setAuctionId(bidding.getProductId());
-//		auctionDao.updateAuctionCurrentPrice(auction);
 	}
 
 	public Bidding getBidding(int biddingId) {
@@ -178,20 +161,18 @@ public class SosoMarketImpl implements SosoMarketFacade {
 		return biddingDao.getBiddingsByAuction(auctionId);
 	}
 
-	/* order */
-
 	public void insertOrder(Order order) {
 		orderDao.insertOrder(order);
 	}
-	
+
 	public Order getOrder(int orderId) {
 		return orderDao.getOrder(orderId);
-	}	
+	}
 
 	public Order getOrderByBuyer(int orderId) {
 		return orderDao.getOrderByBuyer(orderId);
 	}
-	
+
 	public Order getOrderBySeller(int orderId) {
 		return orderDao.getOrderBySeller(orderId);
 	}
@@ -207,14 +188,11 @@ public class SosoMarketImpl implements SosoMarketFacade {
 	public void updateOrderStatus(Order order) {
 		orderDao.updateOrderStatus(order);
 	}
-	
-	
-	/* Wish */
-	
+
 	public Wish getWish(int productId) {
 		return wishDao.getWish(productId);
 	}
-	
+
 	public Wish getWish(String accountId, int productId) {
 		return wishDao.getWish(accountId, productId);
 	}
@@ -222,11 +200,11 @@ public class SosoMarketImpl implements SosoMarketFacade {
 	public List<Wish> getWishListByUser(String accountId) {
 		return wishDao.getWishListByUser(accountId);
 	}
-	
+
 	public List<Wish> getWishListAuctionByUser(String accountId) {
 		return wishDao.getWishListAuctionByUser(accountId);
 	}
-    
+
 	public void insertWish(Wish wish) {
 		wishDao.insertWish(wish);
 	}
@@ -238,6 +216,6 @@ public class SosoMarketImpl implements SosoMarketFacade {
 	@Override
 	public void deleteBidding(int auctionId) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

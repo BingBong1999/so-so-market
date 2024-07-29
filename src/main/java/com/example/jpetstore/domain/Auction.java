@@ -1,6 +1,7 @@
 package com.example.jpetstore.domain;
 
 import java.io.Serializable;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,15 +11,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 @SuppressWarnings("serial")
 public class Auction implements Serializable {
 
-	/* Private Fields */
-
 	private int auctionId;
 	private Product product;
 	private int currentPrice;
 	private int startPrice;
 	private String currentPriceBuyerId;
 
-	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
 	private Date deadLine;
 	private List<Bidding> biddingList = new ArrayList<Bidding>();
 
@@ -69,8 +68,7 @@ public class Auction implements Serializable {
 	public List<Bidding> getBiddingList() {
 		return biddingList;
 	}
-	
-	//구현필요
+
 	public boolean getPriceValidate(String auctionId, int biddingPrice) {
 		return true;
 	}
@@ -89,5 +87,5 @@ public class Auction implements Serializable {
 				+ ", startPrice=" + startPrice + ", currentPriceBuyerId=" + currentPriceBuyerId + ", deadLine="
 				+ deadLine + ", biddingList=" + biddingList + "]";
 	}
-	
+
 }

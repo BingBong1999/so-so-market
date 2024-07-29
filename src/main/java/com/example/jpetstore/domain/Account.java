@@ -1,12 +1,11 @@
 package com.example.jpetstore.domain;
 
 import java.io.Serializable;
+
 import java.util.Date;
 
 @SuppressWarnings("serial")
 public class Account implements Serializable {
-
-	/* Private Fields */
 
 	private String accountId;
 	private String password;
@@ -19,13 +18,6 @@ public class Account implements Serializable {
 	private String address;
 	private String zipcode;
 	private int withdraw;
-//  private String favouriteCategoryId;
-//  private String languagePreference;
-//  private boolean listOption;
-//  private boolean bannerOption;
-//  private String bannerName;
-
-	/* JavaBeans Properties */
 
 	public String getAccountId() {
 		return accountId;

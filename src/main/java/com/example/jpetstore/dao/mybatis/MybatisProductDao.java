@@ -14,9 +14,10 @@ import com.example.jpetstore.domain.Product;
 
 @Repository
 public class MybatisProductDao implements ProductDao {
+
 	@Autowired
 	private ProductMapper productMapper;
-	
+
 	public List<Product> getProductListByCategory(int categoryId) throws DataAccessException {
 		return productMapper.getProductListByCategory(categoryId);
 	}
@@ -24,37 +25,36 @@ public class MybatisProductDao implements ProductDao {
 	public List<Product> getProductListByUser(String accountId) throws DataAccessException {
 		return productMapper.getProductListByUser(accountId);
 	}
-	
-	public List<Product> searchProductList(String keywords) 
-			throws DataAccessException {
-	    return productMapper.searchProductList(
-	    	"%" + keywords.toLowerCase() + "%");
+
+	public List<Product> searchProductList(String keywords) throws DataAccessException {
+		return productMapper.searchProductList("%" + keywords.toLowerCase() + "%");
 	}
-	
+
 	/* Inner Classes */
 	public static class ProductSearch {
 
 		private List<String> keywordList = new ArrayList<String>();
 
 		public ProductSearch(String keywords) {
-			StringTokenizer splitter = new StringTokenizer(keywords," ",false);
+			StringTokenizer splitter = new StringTokenizer(keywords, " ", false);
 			while (splitter.hasMoreTokens()) {
 				this.keywordList.add("%" + splitter.nextToken() + "%");
 			}
 		}
+
 		public List<String> getKeywordList() {
 			return keywordList;
 		}
 	}
-	
+
 	public List<Product> getAllProductList() throws DataAccessException {
 		return productMapper.getAllProductList();
 	}
-	
+
 	public Product getProduct(int productId) throws DataAccessException {
-	    return productMapper.getProduct(productId);
+		return productMapper.getProduct(productId);
 	}
-	
+
 	public List<Product> getProductByUserAndTitle(String accountId, String title) throws DataAccessException {
 		return productMapper.getProductByUserAndTitle(accountId, title);
 	}
@@ -73,5 +73,5 @@ public class MybatisProductDao implements ProductDao {
 
 	public void updateProductStatus(Product product) throws DataAccessException {
 		productMapper.updateProductStatus(product);
-	}	
+	}
 }

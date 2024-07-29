@@ -1,12 +1,11 @@
 package com.example.jpetstore.domain;
 
 import java.io.Serializable;
+
 import java.sql.Date;
 
 @SuppressWarnings("serial")
 public class Product implements Serializable {
-
-	/* Private Fields */
 
 	private int productId;
 	private int categoryId;
@@ -21,7 +20,7 @@ public class Product implements Serializable {
 	private String productType;
 	private Account account;
 	private String image;
-	
+
 	public String getImage() {
 		return image;
 	}
@@ -101,7 +100,7 @@ public class Product implements Serializable {
 	public void setShippingFee(int shippingFee) {
 		this.shippingFee = shippingFee;
 	}
-	
+
 	public int getPrice() {
 		return price;
 	}
@@ -109,7 +108,7 @@ public class Product implements Serializable {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
+
 	public String getProductType() {
 		return productType;
 	}
@@ -117,11 +116,11 @@ public class Product implements Serializable {
 	public void setProductType(String productType) {
 		this.productType = productType;
 	}
-	
+
 	public Account getAccount() {
 		return account;
 	}
-	
+
 	public void setAccount(Account account) {
 		this.account = account;
 	}
@@ -130,7 +129,8 @@ public class Product implements Serializable {
 	public String toString() {
 		return "Product [productId=" + productId + ", categoryId=" + categoryId + ", sellerId=" + sellerId + ", title="
 				+ title + ", description=" + description + ", productStatus=" + productStatus + ", createdTime="
-				+ createdTime + ", shipping=" + shipping + ", shippingFee=" + shippingFee + ", price=" + price + ", image=" + image + "]";
+				+ createdTime + ", shipping=" + shipping + ", shippingFee=" + shippingFee + ", price=" + price
+				+ ", image=" + image + "]";
 	}
 
 }

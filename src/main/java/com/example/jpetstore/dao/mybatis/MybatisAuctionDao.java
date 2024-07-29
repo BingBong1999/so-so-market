@@ -34,15 +34,15 @@ public class MybatisAuctionDao implements AuctionDao {
 	public void updateAuctionCurrentPrice(Bidding bidding) throws DataAccessException {
 		auctionMapper.updateAuctionCurrentPrice(bidding);
 	}
-	
+
 	public void updateAuctionCurrentPriceAndBuyerId(Bidding bidding) {
 		auctionMapper.updateAuctionCurrentPriceAndBuyerId(bidding);
 	}
-	
+
 	public List<Auction> getAuctionListByUser(String accountId) throws DataAccessException {
 		return auctionMapper.getAuctionListByUser(accountId);
 	}
-	
+
 	public List<Auction> getAuctionListByCategory(int categoryId) throws DataAccessException {
 		return auctionMapper.getAuctionListByCategory(categoryId);
 	}
@@ -54,18 +54,19 @@ public class MybatisAuctionDao implements AuctionDao {
 	public List<Auction> getAllAuctionList() throws DataAccessException {
 		return auctionMapper.getAllAuctionList();
 	}
-	
+
 	/* Inner Classes */
 	public static class AuctionSearch {
 
 		private List<String> keywordList = new ArrayList<String>();
 
 		public AuctionSearch(String keywords) {
-			StringTokenizer splitter = new StringTokenizer(keywords," ",false);
+			StringTokenizer splitter = new StringTokenizer(keywords, " ", false);
 			while (splitter.hasMoreTokens()) {
 				this.keywordList.add("%" + splitter.nextToken() + "%");
 			}
 		}
+
 		public List<String> getKeywordList() {
 			return keywordList;
 		}

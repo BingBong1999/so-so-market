@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface EventMapper {
-  void insertNewEvent(HashMap<String, Date> map);
-  void closeEvent(Date curTime);
+	
+	void insertNewEvent(HashMap<String, Date> map);
+	
+	void closeEvent(Date curTime);
 }

@@ -5,22 +5,26 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class Category implements Serializable {
 
-  /* Private Fields */
+	private String categoryId;
+	private String name;
 
-  private String categoryId;
-  private String name;
+	public String getCategoryId() {
+		return categoryId;
+	}
 
-  /* JavaBeans Properties */
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId.trim();
+	}
 
-  public String getCategoryId() { return categoryId; }
-  public void setCategoryId(String categoryId) { this.categoryId = categoryId.trim(); }
+	public String getName() {
+		return name;
+	}
 
-  public String getName() { return name; }
-  public void setName(String name) { this.name = name; }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  /* Public Methods */
-
-  public String toString() {
-    return getCategoryId();
-  }
+	public String toString() {
+		return getCategoryId();
+	}
 }
