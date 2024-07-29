@@ -1,6 +1,7 @@
 package com.example.jpetstore.controller;
 
 import java.io.Serializable;
+
 import com.example.jpetstore.domain.Order;
 import com.example.jpetstore.domain.Product;
 
@@ -13,18 +14,17 @@ public class OrderForm implements Serializable {
 	public Order getOrder() {
 		return order;
 	}
-	
+
 	public void setProductId(int productId) {
-		 order.setProductId(productId);
-	}
-	
-	public void setBuyerId(String buyerId) {
-		order.setBuyerId(buyerId);;
-	}
-	
-	 @Override
-	public String toString() {
-	     return "OrderForm [product=" + product + "order=" + order + "]";
+		order.setProductId(productId);
 	}
 
+	public void setBuyerId(String buyerId) {
+		order.setBuyerId(buyerId);
+	}
+
+	@Override
+	public String toString() {
+		return "OrderForm [product=" + product + "order=" + order + "]";
+	}
 }

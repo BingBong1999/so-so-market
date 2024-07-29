@@ -8,9 +8,7 @@ import com.example.jpetstore.domain.Account;
 public class AccountForm implements Serializable {
 
 	private Account account;
-
 	private boolean newAccount;
-
 	private String repeatedPassword;
 
 	public AccountForm(Account account) {
@@ -44,6 +42,4 @@ public class AccountForm implements Serializable {
 		return "AccountForm [account=" + account + ", newAccount=" + newAccount + ", repeatedPassword="
 				+ repeatedPassword + "]";
 	}
-	
-	
 }

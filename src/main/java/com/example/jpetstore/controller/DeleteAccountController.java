@@ -1,4 +1,5 @@
 package com.example.jpetstore.controller;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +14,11 @@ import com.example.jpetstore.service.SosoMarketFacade;
 @Controller
 @RequestMapping("/user/deleteUser.do")
 @SessionAttributes("userSession")
-public class DeleteAccountController { 
+public class DeleteAccountController {
 
 	@Autowired
 	private SosoMarketFacade sosoMarket;
-	
+
 	@Autowired
 	public void setSosomarket(SosoMarketFacade sosoMarket) {
 		this.sosoMarket = sosoMarket;
@@ -25,21 +26,18 @@ public class DeleteAccountController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String showForm() {
-	      return "DeleteAccountForm";
+		return "DeleteAccountForm";
 	}
-	
+
 	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView handleRequest(
-			@ModelAttribute("userSession") UserSession userSession,
-			HttpSession session
-		) throws Exception {
-		
+	public ModelAndView handleRequest(@ModelAttribute("userSession") UserSession userSession, HttpSession session)
+			throws Exception {
+
 		String accountId = userSession.getAccount().getAccountId();
 		sosoMarket.deleteAccount(accountId);
 		session.removeAttribute("userSession");
 		session.invalidate();
-		
+
 		return new ModelAndView("index");
 	}
 }
-
