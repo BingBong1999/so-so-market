@@ -8,14 +8,19 @@
 
 - 총 4 명의 팀원으로 구성하여 한 학기동안 진행하였습니다.
 
-- 해당 프로젝트에 대한 전반적인 정보는 본 README 파일에 기재되어 있지만, **요구사항 분석**, **use-case model**, **시스템 구성도**, **UI 설계**, **도메인 모델**, **데이터베이스 설계**, **Request Mapping**, **프로그램 동작 화면**이 포함된 **이미지 파일**은 아래의 첨부된 PDF 파일과 프로젝트 시연 영상 링크를 통해 확인해 주시기 바랍니다.
+- 해당 프로젝트에 대한 전반적인 정보는 본 README 파일에 기재되어 있지만,
 
-- 참고로, 커밋 내역의 20190942 학번과 hello 계정은 모두 본인임을 밝힙니다. 또한, 본 README 파일 메인 이미지의 20190962 학번은 오타임을 알려드립니다.
+  **요구사항 분석**, **use-case model**, **시스템 구성도**, **UI 설계**, **도메인 모델**, **데이터베이스 설계**, **Request Mapping**, **프로그램 동작 화면**이 포함된 **이미지 파일**은 
 
-  
- 	- https://drive.google.com/file/d/1HcYkglrOLJpaS3OkbAWgJ1bHG3U5FI2q/view?usp=sharing **(pdf 파일 링크)**
+  아래의 첨부된 PDF 파일과 프로젝트 시연 영상 링크를 통해 확인해 주시기 바랍니다.
+
+- 참고로, Commit 내역의 20190942 계정(필자의 학번)과 hello 계정은 모두 본인임을 밝힙니다. 또한, 본 README 파일 메인 이미지의 20190962 학번은 오타임을 알려드립니다.
+
+- PDF 파일 및 프로젝트 시연 영상 링크:
+
+ 	- [so-so-market pdf 파일 링크](https://drive.google.com/file/d/1HcYkglrOLJpaS3OkbAWgJ1bHG3U5FI2q/view?usp=sharing)
     
-  - https://drive.google.com/file/d/1nfy_289BUxztjc7DZzhDfx9vLQQt3c_J/view?usp=sharing **(pdf 발표 자료 구두 설명 및 프로젝트 시연 영상)**
+  - [so-so-market 프로젝트 시연 영상 링크](https://drive.google.com/file/d/1nfy_289BUxztjc7DZzhDfx9vLQQt3c_J/view?usp=sharing)
 
 ## 🌒 개발 배경 및 목적
 
@@ -243,27 +248,27 @@
 
 - **사용자 요청 처리 (JSP Page → Controller)**
 
-사용자가 특정 이벤트를 발생시키면, 해당 이벤트의 사용자 요청 URI와 매핑된 Controller를 `@RequestMapping` 으로 찾아, 사용자 요청을 Controller에 전달합니다.
+  사용자가 특정 이벤트를 발생시키면, 해당 이벤트의 사용자 요청 URI와 매핑된 Controller를 `@RequestMapping` 으로 찾아, 사용자 요청을 Controller에 전달합니다.
 
 - **데이터 검증 (Controller)**
 
-Controller는 사용자 요청과 입력 데이터를 받은 후, 적절한 **Validator**를 호출하여 데이터를 검증합니다.
+  Controller는 사용자 요청과 입력 데이터를 받은 후, 적절한 **Validator**를 호출하여 데이터를 검증합니다.
 
 - **Service 클래스 호출 (Controller → Service)**
 
-Controller는 검증된 데이터를 바탕으로, 해당 요청에 대한 Database 작업을 수행하기 위해 `@Autowired`로 주입된 Service 인터페이스의 관련 메서드를 호출합니다.
+  Controller는 검증된 데이터를 바탕으로, 해당 요청에 대한 Database 작업을 수행하기 위해 `@Autowired`로 주입된 Service 인터페이스의 관련 메서드를 호출합니다.
 
 - **DAO 클래스 호출 (Service → DAO)**
 
-Service 인터페이스를 구현한 Service 클래스의 관련 메서드에서 `@Autowired`를 통해 주입받은 DAO 객체의 관련 메서드를 실행합니다.
+  Service 인터페이스를 구현한 Service 클래스의 관련 메서드에서 `@Autowired`를 통해 주입받은 DAO 객체의 관련 메서드를 실행합니다.
 
 - **Database 연동 (DAO → Database → Service → Controller)**
 
-DAO 클래스에서는 MyBatis를 통해 작성한 SQL 쿼리가 실행되고, 필요에 따라 결과 객체를 반환합니다. 해당 결과는 다시 Service Layer를 통해 Controller로 전달됩니다.
+  DAO 클래스에서는 MyBatis를 통해 작성한 SQL 쿼리가 실행되고, 필요에 따라 결과 객체를 반환합니다. 해당 결과는 다시 Service Layer를 통해 Controller로 전달됩니다.
 
 - **결과 반환 및 페이지 전환 (Controller → JSP Page)**
 
-작업이 완료되면 Controller는 ModelAndView, Model, String 등 다양한 Return Type을 사용하여 사용자에게 결과를 반환하거나 적절한 페이지로 사용자를 안내합니다.
+  작업이 완료되면 Controller는 ModelAndView, Model, String 등 다양한 Return Type을 사용하여 사용자에게 결과를 반환하거나 적절한 페이지로 사용자를 안내합니다.
 
 ---
 
@@ -273,23 +278,23 @@ DAO 클래스에서는 MyBatis를 통해 작성한 SQL 쿼리가 실행되고, �
 
     - **Form 화면으로 이동하는 이벤트**
 
-    ```<a href=’<c:url value=”uri_address”/>’>```와 같이 **GET 방식**으로 사용자 요청 URI를 생성합니다.
+      ```<a href=’<c:url value=”uri_address”/>’>```와 같이 **GET 방식**으로 사용자 요청 URI를 생성합니다.
 
     - **Form을 작성한 후 데이터를 처리하는 이벤트**
 
-    ```<form:form modelAttribute=”command_name” method=”post”>```와 같이 **POST방식**으로 사용자 요청 URI를 생성합니다.
+      ```<form:form modelAttribute=”command_name” method=”post”>```와 같이 **POST방식**으로 사용자 요청 URI를 생성합니다.
 
 - **Form 초기화 및 생성 (Controller::formBacking)**
 
-Form의 구성 요소와 대응되는 Command 객체를 생성하고 초기 값들을 설정합니다.
+  Form의 구성 요소와 대응되는 Command 객체를 생성하고 초기 값들을 설정합니다.
 
 - **Form 표시 (Controller::GET 요청 처리)**
 
-사용자가 Form을 작성하기 위해 버튼을 클릭하면, ```@RequestMapping(method=RequestMethod.GET)```으로 지정된 메서드가 호출됩니다. 이 메서드는 ```formBacking()``` 메서드에 의해 생성되고 초기화된 Command 객체를 Form 화면에 전달하여, 초기화된 값을 포함한 Form 화면을 사용자에게 제공합니다.
+  사용자가 Form을 작성하기 위해 버튼을 클릭하면, ```@RequestMapping(method=RequestMethod.GET)```으로 지정된 메서드가 호출됩니다. 이 메서드는 ```formBacking()``` 메서드에 의해 생성되고 초기화된 Command 객체를 Form 화면에 전달하여, 초기화된 값을 포함한 Form 화면을 사용자에게 제공합니다.
 
 - **Form 제출 (Controller::POST 요청 처리)**
 
-사용자가 Form을 작성한 후 버튼을 클릭하면, ```@RequestMapping(method=RequestMethod.POST)```으로 지정된 메서드가 호출됩니다. 이 메서드에서 ```@ModelAttribute(”command_name”)```로 지정된 매개변수를 통해 ```formBacking()``` 메서드에 의해 생성된 Command 객체에 Form에서 입력된 값들이 저장되어 참조할 수 있습니다. 해당 메서드 내에서 적절한 작업을 수행하고 사용자에게 적절한 화면을 반환합니다.
+  사용자가 Form을 작성한 후 버튼을 클릭하면, ```@RequestMapping(method=RequestMethod.POST)```으로 지정된 메서드가 호출됩니다. 이 메서드에서 ```@ModelAttribute(”command_name”)```로 지정된 매개변수를 통해 ```formBacking()``` 메서드에 의해 생성된 Command 객체에 Form에서 입력된 값들이 저장되어 참조할 수 있습니다. 해당 메서드 내에서 적절한 작업을 수행하고 사용자에게 적절한 화면을 반환합니다.
 
 ---
 
@@ -297,11 +302,11 @@ Form의 구성 요소와 대응되는 Command 객체를 생성하고 초기 값�
 
 - **JSP 페이지**
 
-HTML 파일에서 ```<form>``` 태그의 ```enctype``` 속성 값을 ```“multipart/form-data”```로 설정하였습니다.
+  HTML 파일에서 ```<form>``` 태그의 ```enctype``` 속성 값을 ```“multipart/form-data”```로 설정하였습니다.
 
 - **Bean & Maven Dependency 설정**
 
-Multipart 형식의 데이터를 Controller에서 사용할 수 있도록 Commons FileUpload API를 이용한 MultipartResolver Bean을 생성하고 Maven Dependency에 common-fileupload를 추가하였습니다.
+  Multipart 형식의 데이터를 Controller에서 사용할 수 있도록 Commons FileUpload API를 이용한 MultipartResolver Bean을 생성하고 Maven Dependency에 common-fileupload를 추가하였습니다.
 
 - **Controller**
 
@@ -319,15 +324,15 @@ Multipart 형식의 데이터를 Controller에서 사용할 수 있도록 Common
 
 - **사용자 경매 상품 등록 (JSP Page)**
 
-사용자가 Form에 경매 상품과 관련된 정보를 입력한 후 버튼을 클릭하여 사용자 요청 URI를 생성합니다.
+  사용자가 Form에 경매 상품과 관련된 정보를 입력한 후 버튼을 클릭하여 사용자 요청 URI를 생성합니다.
 
 - **경매 상품 등록 처리 (Controller)**
 
-사용자가 입력한 정보를 바탕으로, SchedulerService 클래스의 testScheduler 메서드를 호출하여 경매상품의 마감 시간과 경매 상품의 ID를 매개변수로 전달합니다.
+  사용자가 입력한 정보를 바탕으로, SchedulerService 클래스의 testScheduler 메서드를 호출하여 경매상품의 마감 시간과 경매 상품의 ID를 매개변수로 전달합니다.
 
 - **SchedulerService 클래스 설정 (SchedulerService)**
 
-```@Service```와 ```@Transactional```을 통해 해당 클래스를 Spring에서 관리되는 Bean으로 정의하고 트랜잭션 처리를 지원하도록 구성되었습니다.
+  ```@Service```와 ```@Transactional```을 통해 해당 클래스를 Spring에서 관리되는 Bean으로 정의하고 트랜잭션 처리를 지원하도록 구성되었습니다.
 
 - **경매 상품 마감 후 작업 지정 (SchedulerService::testScheduler)**
 
