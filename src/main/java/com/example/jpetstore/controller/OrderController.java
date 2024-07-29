@@ -49,6 +49,7 @@ public class OrderController {
 
 	@ModelAttribute("orderForm")
 	public OrderForm formBackingObject(HttpServletRequest request) throws Exception {
+		
 		userSession = (UserSession) WebUtils.getSessionAttribute(request, "userSession");
 		of = new OrderForm();
 		of.setBuyerId(userSession.getAccount().getAccountId());

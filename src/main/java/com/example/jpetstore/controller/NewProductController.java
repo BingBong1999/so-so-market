@@ -99,6 +99,7 @@ public class NewProductController implements ApplicationContextAware {
 	}
 
 	private String uploadFile(MultipartFile imageFile) {
+		
 		String filename = UUID.randomUUID().toString() + "_" + imageFile.getOriginalFilename();
 		File file = new File(this.uploadDir + filename);
 		try {
