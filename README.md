@@ -340,7 +340,7 @@
     
     - updateTableRunner는 Runnable 인터페이스를 구현한 익명 내부 클래스로, 지정한 마감 시간이 되면 실행되는 작업이 정의되어있습니다. 해당 클래스의 ```run()``` 메서드에서는 매개변수로 전달받은 경매 상품의 ID를 사용하여 Database에 주문을 생성하고, 경매 상품의 상태를 업데이트 하는 등의 작업을 수행합니다.
 
-## 🌗 프로젝트 실행 방법
+## 🌗 프로젝트 설정 및 실행 방법
 
 ### 1. Remote so-so-market Repository 를 본인의 Eclipse Local Repository에 Clone 합니다.
 
@@ -348,15 +348,17 @@
 
 ### 3. 한글 Encoding을 다음과 같은 순서로 설정합니다.
 
-  - Window -> Preferences -> 검색 창에 spelling 입력 -> Encoding -> Default(UTF-8) 체크 -> Apply
+  - Window -> Preferences -> Editors -> Text Editors -> Spelling -> Encoding -> Other: UTF-8 체크 -> Apply
 
-  - Window -> Preferences -> 검색 창에 Workspace 입력 -> Text file encoding -> Other: UTF-8 체크 -> Apply
+  - Window -> Preferences -> General -> Workspace -> Text file encoding -> Other: UTF-8 체크 -> Apply
 
   - Window -> Preferences -> General -> Content Types -> Java Class File, Text -> Default encoding: UTF-8 입력 -> Update -> Apply and Close
 
-  - Window -> Preferences -> Editors -> Text Editors -> Spelling -> Encoding -> Other: UTF-8 체크 -> Apply
+  - Window -> Preferences -> Web -> CSS Files, HTML Files, JSP Files -> Encoding: UTF-8 입력 -> Apply and Close
 
-  - 프로젝트 우클릭 -> Properties -> Resource -> Text file encoding -> Ohter: UTF-8 체크 -> Apply
+  - Window -> Preferences -> XML -> XML Files -> Encoding: UTF-8 입력 -> Apply and Close
+
+  - so-so-market 프로젝트 우클릭 -> Properties -> Resource -> Text file encoding -> Other: UTF-8 체크 -> Apply
 
 ### 4. Apache Tomcat을 설치합니다.
 
