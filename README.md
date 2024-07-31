@@ -2,7 +2,7 @@
 
 ## 🌞 목차
 
-[1. 정보](#🌑-프로젝트-정보)
+[1. TEST](https://github.com/BingBong1999/so-so-market/blob/master/README.md#-%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5)
 
 ### **[1. 🌑 프로젝트 정보](#🌑-프로젝트-정보)**
 
