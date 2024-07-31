@@ -1,5 +1,9 @@
 # Project - SoSoMarket (회원 간 굿즈 거래 및 경매 시스템)
 
+## 🌞 Index
+
+[1. 프로젝트 정보](#🌑-프로젝트-정보)
+
 ## 🌑 프로젝트 정보
 
 ![image](https://github.com/BingBong1999/so-so-market/assets/142529694/8a8eca3d-cb74-405b-a5dc-767b901b70eb)
