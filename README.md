@@ -48,13 +48,13 @@
 
 ## 🌓 SKILL
 
-- **Language**: java, HTML, CSS, Java Script, SQL
+- **Language**: ```Java```, ```HTML```, ```CSS```, ```Java Script```, ```SQL```
 
-- **Database**: Oracle
+- **Database**: ```Oracle```
 
-- **Framework**: Spring, Bootstrap, MyBatis
+- **Framework**: ```Spring```, ```Bootstrap```, ```MyBatis```
 
-- **Design Pattern**: MVC Pattern, Facade Pattern
+- **Design Pattern**: ```MVC Pattern```, ```Facade Pattern```
 
 ## 🌔 주요 기능
 
