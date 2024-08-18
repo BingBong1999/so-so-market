@@ -71,5 +71,3 @@ public class SchedulerService {
 		scheduler.schedule(updateTableRunner, closingTime);
 	}
 }
-
-// test text
