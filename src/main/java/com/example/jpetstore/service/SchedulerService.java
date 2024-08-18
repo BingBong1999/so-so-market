@@ -31,7 +31,7 @@ public class SchedulerService {
 		this.sosomarket = sosomarket;
 	}
 
-	public void testScheduler(Date closingTime, int auctionId) {
+	public void taskScheduler(Date closingTime, int auctionId) {
 
 		Runnable updateTableRunner = new Runnable() {
 			
