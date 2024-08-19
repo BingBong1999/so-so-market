@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.util.WebUtils;
 
+import com.example.jpetstore.domain.Auction;
+
 import com.example.jpetstore.service.BiddingFormValidator;
 import com.example.jpetstore.service.SosoMarketFacade;
 
@@ -63,22 +65,19 @@ public class BiddingController {
 	public String onSubmit(@RequestParam("productId") String auctionId,			
 			@ModelAttribute("biddingForm") BiddingForm biddingForm, BindingResult result) throws Exception {
 		
+		Auction auction = sosomarket.getAuction(Integer.parseInt(auctionId));
+		int highestBid = auction.getCurrentPrice();
+		
 		validator.validate(biddingForm, result);
+		validator.validateHighestBid(biddingForm, result, highestBid);
 		
 		if (result.hasErrors())
 			return formViewName;
 
-		int int_auctionId = Integer.parseInt(auctionId);
-		biddingForm.setProductId(int_auctionId);
-		int presentBiddingPrice = sosomarket.getAuction(int_auctionId).getCurrentPrice();
-
-		if (presentBiddingPrice < biddingForm.getBidding().getBiddingPrice()) {
-			sosomarket.insertBidding(biddingForm.getBidding());
-			sosomarket.updateAuctionCurrentPriceAndBuyerId(biddingForm.getBidding());
-		} else {
-			result.reject("BIDDINGPRICE_TOO_LOW");
-			return formViewName;
-		}
+		biddingForm.setProductId(Integer.parseInt(auctionId));
+		
+		sosomarket.insertBidding(biddingForm.getBidding());
+		sosomarket.updateAuctionCurrentPriceAndBuyerId(biddingForm.getBidding());
 
 		return successViewName;
 	}
