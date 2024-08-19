@@ -1,7 +1,6 @@
 package com.example.jpetstore.controller;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -61,8 +60,7 @@ public class BiddingController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String onSubmit(HttpServletRequest request, HttpSession session, @RequestParam("productId") String auctionId,
-			@ModelAttribute("userSession") UserSession userSession,
+	public String onSubmit(@RequestParam("productId") String auctionId,			
 			@ModelAttribute("biddingForm") BiddingForm biddingForm, BindingResult result) throws Exception {
 		
 		validator.validate(biddingForm, result);
