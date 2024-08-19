@@ -2,6 +2,7 @@ package com.example.jpetstore.service;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import com.example.jpetstore.controller.BiddingForm;
@@ -18,6 +19,8 @@ public class BiddingFormValidator implements Validator {
 
 		BiddingForm biddingForm = (BiddingForm) obj;
 		Bidding bidding = biddingForm.getBidding();
+		
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "bidding.biddingPrice", "BIDDINGPRICE_REQUIRED");
 
 		if (bidding.getBiddingPrice() < 1000 && bidding.getBiddingPrice() >= 0) {
 			errors.rejectValue("bidding.biddingPrice", "BIDDINGPRICE_MISMATCH");
