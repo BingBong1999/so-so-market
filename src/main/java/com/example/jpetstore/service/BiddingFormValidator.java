@@ -22,7 +22,7 @@ public class BiddingFormValidator implements Validator {
 		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "bidding.biddingPrice", "BIDDINGPRICE_REQUIRED");
 
-		if (bidding.getBiddingPrice() < 1000 && bidding.getBiddingPrice() >= 0) {
+		if (bidding.getBiddingPrice() < 1000) {
 			errors.rejectValue("bidding.biddingPrice", "BIDDINGPRICE_MISMATCH");
 		}
 	}
