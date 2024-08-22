@@ -302,13 +302,13 @@
         
         - **Spring MessageSource**를 활용하여 오류 메세지들을 message bundle에 저장하였습니다. 해당 오류 메세지들은 (message-key, error-message) 쌍으로 저장되어 있어, message-key를 통해 error-message 값을 찾을 수 있습니다.
         
-        - 잘못된 사용자 입력값이 전달될 경우를 대비하여 **Spring JSP Custom Tags**를 사용하여 View에서 오류 메세지를 출력하였습니다.
-        
         - 사용자로부터 입력받은 데이터를 모델 데이터로 만들어 세션에 저장하여 활용하기 위해 ```@SessionAttributes```를 사용하였습니다.
         
         - **Spring JSP Custom Tags**
-            
-            - Command 객체에 저장된 속성 값을 JSP form에서 쉽게 참조하고, 반대로 사용자가 입력한 값들을 Command 객체에 간편하게 저장하기 위해 Spring JSP Custom Tags를 사용하였습니다.
+         
+            - 잘못된 사용자 입력값이 전달될 경우를 대비하여 **Spring JSP Custom Tags**를 사용하여 View에서 오류 메세지를 출력하였습니다.
+         
+            - Command 객체에 저장된 속성 값을 JSP form에서 쉽게 참조하고, 반대로 사용자가 입력한 값들을 Command 객체에 **간편하게** 저장하기 위해 Spring의 데이터 바인딩 메커니즘과 더불어 Spring JSP Custom Tags를 사용하였습니다.
         
         - **Spring Scheduling**
             
