@@ -466,9 +466,11 @@
 
 - [Dynamic Web Module과 Tomcat 버전 호환하는 방법](https://dark-cloud-covered-sunshine.tistory.com/27)
 
-**5. so-so-market 프로젝트를 Tomcat에 적재합니다.**
+**5. so-so-market 프로젝트 -> Properties -> Server에서 Tomcat을 설정합니다**
 
-**6. 한글 Encoding을 다음과 같은 순서로 설정합니다.**
+**6. so-so-market 프로젝트를 Tomcat에 적재합니다.**
+
+**7. 한글 Encoding을 다음과 같은 순서로 설정합니다.**
 
 - Window -> Preferences -> Editors -> Text Editors -> Spelling -> Encoding -> Other: UTF-8 체크 -> Apply
 
@@ -482,7 +484,7 @@
 
 - so-so-market 프로젝트 우클릭 -> Properties -> Resource -> Text file encoding -> Other: UTF-8 체크 -> Apply
 
-**7. 프로젝트 전체실행 버튼을 클릭합니다.**
+**8. 프로젝트 전체실행 버튼을 클릭합니다.**
 
 ## 🌘 프로젝트 설계 이미지
 
